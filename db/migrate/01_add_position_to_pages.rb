@@ -1,6 +1,6 @@
 class AddPositionToPages < ActiveRecord::Migration
   def self.up
-    add_column :pages, :position, :integer
+    add_column :pages, :position, :integer, :default => 0
     Page.reset_column_information
     say_with_time("Putting all pages in a default order...") do
       ActiveRecord::Base.record_timestamps = false
